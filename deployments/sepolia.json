@@ -1,0 +1,8 @@
+{
+    "network": "sepolia",
+    "chainId": 11155111,
+    "contract": "ProbableMarket",
+    "address": "0xf2f1E2cE46879b89573a6F1592Be522D6bb929ba",
+    "deployedBy": "0x877c110c77B04B9A13deFfEBD3cFe07B89439Bb5",
+    "compiler": "0.8.28"
+}
