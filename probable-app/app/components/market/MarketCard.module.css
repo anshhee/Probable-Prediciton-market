@@ -1,0 +1,93 @@
+/* ── MarketCard ─────────────────────────────────────────────────────────── */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #222;
+  border-radius: 10px;
+  background: #111;
+  width: 100%;
+  max-width: 480px;
+  text-align: left;
+}
+
+/* Header ── id + badge */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.marketId {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.stateBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.stateActive    { background: #14532d; color: #4ade80; }
+.stateResolved  { background: #1e3a5f; color: #60a5fa; }
+.stateCancelled { background: #3b1c1c; color: #f87171; }
+
+/* Question */
+.question {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #ccc;
+  min-height: 2.6rem;
+}
+
+/* Probability bar */
+.barWrapper {
+  display: flex;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #1e1e1e;
+}
+
+.barSegment {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.barYes { background: #4ade80; }
+.barNo  { background: #f87171; }
+
+/* Share counts */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.statYes { color: #4ade80; }
+.statNo  { color: #f87171; }
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  border-top: 1px solid #1c1c1c;
+}
+
+.meta {
+  font-size: 0.72rem;
+  color: #444;
+  font-family: var(--font-geist-mono, monospace);
+}

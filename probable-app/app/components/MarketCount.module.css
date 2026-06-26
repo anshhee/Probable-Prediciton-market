@@ -1,0 +1,45 @@
+/* MarketCount card styles */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 1.5rem 2.5rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #111;
+}
+
+.label {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.count {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+
+.loading {
+  font-size: 1.25rem;
+  color: #888;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.error {
+  font-size: 0.875rem;
+  color: #ff4444;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
