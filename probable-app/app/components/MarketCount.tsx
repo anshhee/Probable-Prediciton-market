@@ -12,7 +12,7 @@ export default function MarketCount() {
 
   const renderCount = () => {
     if (isLoading) return <span className={styles.loading}>Loading…</span>;
-    if (isError)   return <span className={styles.error}>Error fetching data</span>;
+    if (isError) return <span className={styles.error}>Error fetching data</span>;
     return <span className={styles.count}>{count?.toString() ?? '0'}</span>;
   };
 

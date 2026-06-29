@@ -2,11 +2,12 @@
 
 import ConnectWallet from './components/ConnectWallet';
 import MarketCard from './components/market/MarketCard';
+import CreateMarketForm from './components/market/CreateMarketForm';
 import { useMarkets } from '@/hooks/useMarkets';
 import styles from './page.module.css';
 
 export default function Home() {
-  const { markets, isLoading, error } = useMarkets();
+  const { markets, isLoading, error, refetch } = useMarkets();
 
   return (
     <main className={styles.main}>
@@ -15,6 +16,9 @@ export default function Home() {
         <p className={styles.subtitle}>Connected to Ethereum Sepolia</p>
 
         <ConnectWallet />
+
+        {/* ── Create market form ────────────────────────────────────────── */}
+        <CreateMarketForm onSuccess={refetch} />
 
         {/* ── Market list section ───────────────────────────────────────── */}
         <section className={styles.marketsSection}>
