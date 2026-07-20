@@ -1,0 +1,236 @@
+/* ── TradeModal ──────────────────────────────────────────────────────────── */
+
+/* Backdrop */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Modal panel */
+.modal {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 1.75rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Header row: title + close button */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e5e5e5;
+  margin: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.15rem 0.3rem;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.closeBtn:hover {
+  color: #ccc;
+}
+
+/* Direction badge */
+.directionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+.badgeYes {
+  background: #14532d;
+  color: #4ade80;
+}
+
+.badgeNo {
+  background: #3b1c1c;
+  color: #f87171;
+}
+
+/* Amount field */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #737373;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 0.55rem 2.75rem 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.35);
+  color: #e5e5e5;
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.input::placeholder {
+  color: #525252;
+}
+
+.input:focus {
+  border-color: #6366f1;
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.inputError {
+  border-color: #f87171 !important;
+}
+
+.inputSuffix {
+  position: absolute;
+  right: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #555;
+  pointer-events: none;
+}
+
+.fieldError {
+  font-size: 0.775rem;
+  color: #f87171;
+  margin: 0;
+}
+
+/* Contract-level error */
+.contractError {
+  font-size: 0.8rem;
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+  word-break: break-all;
+}
+
+/* Action buttons row */
+.actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.cancelBtn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  color: #737373;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.cancelBtn:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ccc;
+}
+
+.cancelBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.submitBtn {
+  flex: 2;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.submitBtnYes {
+  background: linear-gradient(135deg, #4ade80, #16a34a);
+  color: #0a1a0f;
+}
+
+.submitBtnNo {
+  background: linear-gradient(135deg, #f87171, #dc2626);
+  color: #1a0a0a;
+}
+
+.submitBtn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

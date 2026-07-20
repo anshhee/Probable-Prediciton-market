@@ -40,7 +40,7 @@ export default function Home() {
             <ul className={styles.marketList}>
               {markets.map((market) => (
                 <li key={market.id.toString()}>
-                  <MarketCard market={market} />
+                  <MarketCard market={market} onTradeSuccess={refetch} />
                 </li>
               ))}
             </ul>

@@ -78,6 +78,43 @@
 .statYes { color: #4ade80; }
 .statNo  { color: #f87171; }
 
+/* Trade buttons */
+.tradeRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tradeBtn {
+  flex: 1;
+  padding: 0.45rem 0.75rem;
+  border-radius: 7px;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.tradeBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.tradeBtn:active {
+  transform: translateY(0);
+}
+
+.tradeBtnYes {
+  background: #14532d;
+  color: #4ade80;
+}
+
+.tradeBtnNo {
+  background: #3b1c1c;
+  color: #f87171;
+}
+
 /* Footer */
 .footer {
   display: flex;
